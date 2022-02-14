@@ -29,15 +29,20 @@ function playRound(playerSelection, computerSelection){
         result = 'You Lose! Rock beats Scissors';
     }else if(playerSelection === 'paper' && computerSelection === 'scissors'){
         result = 'You Lose! Scissors beats Paper';
-    }else if(playerSelection === 'rock' && computerSelection === 'rock'){
-        result = 'It\'s a Tie between Rocks!';
-    }else if(playerSelection === 'paper' && computerSelection === 'paper'){
-        result = 'It\'s a Tie between Papers!';
-    }else if(playerSelection === 'scissors' && computerSelection === 'scissors'){
-        result = 'It\'s a Tie between Scissors!';
+    }else if(playerSelection === computerSelection){
+        result = `It\'s a Tie between ${playerSelection}!`;
     }else{
-        result = 'An Error has ocurred!';
+        result = 'Error: User has written an invalid option!';
     }
 
     return result;
+}
+
+function game(){
+    let playerChoice;
+
+    for (let i = 0; i < 5; i++) {
+        playerChoice = prompt("Write rock, paper or scissors to play:","rock");
+        console.log(playRound(playerChoice,computerPlay()));
+    }
 }
