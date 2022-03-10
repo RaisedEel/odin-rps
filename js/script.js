@@ -1,5 +1,5 @@
 let playerOptions = document.querySelectorAll("button");
-let currentRound = 0, player1Wins = 0, player2Wins = 0;
+let currentRound = 0, player1Wins = 0, player2Wins = 0, counter = 0;
 const MAXWINS = 5;
 
 playerOptions.forEach(button => {
@@ -22,18 +22,27 @@ function showResult(event){
     }
 }
 
+function nextMov() {
+    let movs = ["rock", "paper", "scissors"];
+    counter = (counter + 1) % movs.length;
+
+    let currMov = document.getElementById("movComp");
+    let newMov = document.createElement("img");
+    newMov.id = "movComp";
+    newMov.src = `./img/${movs[counter]}.png`;
+    newMov.alt = movs[counter];
+    newMov.classList.add("option-img");
+
+    currMov.parentElement.replaceChild(newMov, currMov);
+}
+
+let process = window.setInterval(nextMov,200);
+
 function computerPlay(){
-    let compPlay;
-    let randomNum = Math.floor(Math.random()*3);
-
-    if(randomNum === 0){
-        compPlay = 'rock';
-    }else if(randomNum === 1){
-        compPlay = 'paper';
-    }else{
-        compPlay = 'scissors';
-    }
-
+    clearInterval(process);
+    let currMov = document.getElementById("movComp");
+    let compPlay = currMov.alt;
+    process = window.setInterval(nextMov,200);
     return compPlay;
 }
 
