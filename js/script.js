@@ -9,9 +9,10 @@ playerOptions.forEach(button => {
 function showResult(event){
     let resultDiv = document.getElementById("roundResult");
     let matchDiv = document.getElementById("matchResult");
+    let option = event.currentTarget.querySelector(".option-img");
     matchDiv.style.whiteSpace = "pre-wrap";
 
-    resultDiv.textContent = playRound(event.target.textContent,computerPlay());
+    resultDiv.textContent = playRound(option.alt,computerPlay());
     
     if(player1Wins == MAXWINS || player2Wins == MAXWINS){
         playerOptions.forEach(button => button.removeEventListener("click", showResult));
