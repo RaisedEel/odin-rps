@@ -10,15 +10,43 @@
     <script src="./js/script.js" defer></script>
 </head>
 <body>
-    <div>
-        <button><img src = "./img/rock.png" alt = "Rock" class = "option-img"></button>
-        <button><img src = "./img/paper.png" alt = "Paper" class = "option-img"></button>
-        <button><img src = "./img/scissors.png" alt = "Scissors" class = "option-img"></button>
+    <div class = "container">
+        <div class = "header">
+            <h2 id = "title">Simple Game of Rock, Paper & Scissors</h2>
+            <div>
+                <button id = "reset" class = "btn">RESET</button>
+                <button id = "about" class = "btn">ABOUT</button>
+            </div>
+        </div>
+        <div class = "main">
+            <div class = "oponent-container">
+                <div class = "title-card">Player</div>
+                <div class = "player oponent centered">
+                    <button class = "option-btn"><img src = "./img/rock.png" alt = "Rock" class = "option-img"></button>
+                    <button class = "option-btn"><img src = "./img/paper.png" alt = "Paper" class = "option-img"></button>
+                    <button class = "option-btn"><img src = "./img/scissors.png" alt = "Scissors" class = "option-img"></button>
+                </div>
+            </div>
+            
+            <div class = "vs centered">VS</div>
+            
+            <div class = "oponent-container">
+                <div class = "title-card">Computer</div>
+                <div class = "oponent centered">
+                    <img id = "movComp" src = "./img/rock.png" alt = "rock" class = "option-img">
+                </div>
+            </div>
+        </div>
+        <div class = "round">
+            <button id = "next" class = "btn hidden">GO TO NEXT ROUND!</button>
+        </div>
+        <div class = "footer">
+            <div class = "title-card">Results</div>
+            <div id = "console">
+               <div id = "roundResult"></div>
+               <p id = "matchResult"></p>
+            </div>
+        </div>
     </div>
-    <div>
-       <img id = "movComp" src = "./img/rock.png" alt = "rock" class = "option-img"> 
-    </div>
-    <div id = "roundResult"></div>
-    <p id = "matchResult"></p>
 </body>
 </html>
