@@ -97,9 +97,13 @@
     border-radius: 10px;
 }
 
-.option-btn, .option-btn img{
+.option-btn img{
+    border-radius: 10px;
+}
+
+.option-btn{
+    border: 3px solid white;
     cursor: pointer;
-    border: none;
     border-radius: 10px;
 }
 
@@ -110,6 +114,10 @@
 
 #movComp{
     border-radius: 50%;
+}
+
+.selected{
+    border: 3px solid gold;
 }
 
 .hidden{
