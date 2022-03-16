@@ -1,4 +1,4 @@
-# odin-rps
+# rps-game
 
 Game of Rock, Paper and Scissors using vanilla JS and a simple UI.
 
